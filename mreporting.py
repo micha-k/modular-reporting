@@ -15,7 +15,7 @@ class ModularReporting:
             self.display_help()
         else:
             Log.info("Startup Modular Reporting")
-            
+
             commands = args[1]
             file = args[2]
 

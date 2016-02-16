@@ -5,6 +5,8 @@ meta:
         Neue Zeilen werden berücksichtigt.
     version: 1.0
     date-format: 'foo'
+    data-pool: data/all_data.csv
+    report-data: data/report_data.csv
     periods:
         current: 'Verganene Woche'
         previous1: 'Vorwoche'
