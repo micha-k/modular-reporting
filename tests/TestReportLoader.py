@@ -9,7 +9,7 @@ class ReportConfigurationTestCase(TestCase):
         rcfg = ReportLoader()
         res = rcfg.load_from_file('example.yaml')
 
-        self.assertTrue(True)
+        self.assertTrue(res)
 
     # Todo: Write real test(s)
     def testTrue(self):

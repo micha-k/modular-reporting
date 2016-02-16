@@ -1,5 +1,5 @@
-hosts_prd,21
-hosts_nonprd,15
-vms_prd,134
-vms_nonprd,500
-calls,2
+hosts_prd,2;1
+hosts_nonprd;15
+vms_prd;134
+vms_nonprd;500
+calls;2

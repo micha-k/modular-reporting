@@ -6,9 +6,9 @@ meta:
     version: 1.0
     date-format: 'foo'
     periods:
-        - current: 'Verganene Woche'
-        - previous1: 'Vorwoche'
-        - previous2: 'Vormonat'
+        current: 'Verganene Woche'
+        previous1: 'Vorwoche'
+        previous2: 'Vormonat'
 
 inputs:
 - name: 'Manual KPIs'
@@ -23,3 +23,15 @@ inputs:
   path: '/Users/michael/workspace/modular-reporting/data/input/manual_kpis.csv'
   format: 'csv-kv'
   period: 'current'
+- name: 'Manual KPIs3'
+  var-prefix: 'MAN3'
+  type: 'file'
+  path: '/Users/michael/workspace/modular-reporting/data/input/manual_kpis.csv'
+  format: 'csv-kv'
+  period: 'previous1'
+- name: 'Manual KPIs4'
+  var-prefix: 'MAN4'
+  type: 'file'
+  path: '/Users/michael/workspace/modular-reporting/data/input/manual_kpis.csv'
+  format: 'csv-kv'
+  period: 'previous2'
