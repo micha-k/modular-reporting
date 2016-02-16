@@ -1,0 +1,25 @@
+meta:
+    title: 'Das ist der Report Titel'
+    summary: |
+        Das ist die Beschreibung des Reports, die in Prosaform in den Report eingebunden werden kann.
+        Neue Zeilen werden berücksichtigt.
+    version: 1.0
+    date-format: 'foo'
+    periods:
+        - current: 'Verganene Woche'
+        - previous1: 'Vorwoche'
+        - previous2: 'Vormonat'
+
+inputs:
+- name: 'Manual KPIs'
+  var-prefix: 'MAN'
+  type: 'file'
+  path: '/Users/michael/workspace/modular-reporting/data/input/manual_kpis.csv'
+  format: 'csv-kv'
+  period: 'current'
+- name: 'Manual KPIs2'
+  var-prefix: 'MAN2'
+  type: 'file'
+  path: '/Users/michael/workspace/modular-reporting/data/input/manual_kpis.csv'
+  format: 'csv-kv'
+  period: 'current'
