@@ -5,6 +5,7 @@ import sys
 
 from modules.Log import Log
 
+
 class ModularReporting:
 
     def __init__(self):

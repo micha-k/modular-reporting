@@ -9,8 +9,8 @@ class DataFileReaderTestCase(TestCase):
 
     def test_constructor(self):
         expected1 = ["This is a test file",
-                    "with special chars: öäüÖÄÜ",
-                    "over multiple lines"]
+                     "with special chars: öäüÖÄÜ",
+                     "over multiple lines"]
         expected2 = []
 
         dfr1 = DataFileReader('tests/files/simple_testfile_utf8')
@@ -23,7 +23,10 @@ class DataFileReaderTestCase(TestCase):
         expected1 = {"key_a": "2",
                      "Schlüssel B": "234243534636",
                      "zz Key Z": "929324243,234234,75454"}
+        expected2 = {}
 
         dfr1 = DataFileReader('tests/files/csv-kv_testfile')
+        dfr2 = DataFileReader('tests/files/simple_testfile_utf8')
 
         self.assertEqual(expected1, dfr1.get_csv_kv())
+        self.assertEqual(expected2, dfr2.get_csv_kv())

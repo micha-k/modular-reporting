@@ -23,14 +23,12 @@ class ReportLoader:
             return False;
 
     def load_from_object(self, configuration_object):
-        check = self.check_object_requirements(configuration_object)
-
-        if check:
+        if self.check_object_requirements(configuration_object):
             self.config = configuration_object
             self.init_periods()
             self.load_data()
 
-            return False
+            return True
         else:
             return False
 
@@ -44,7 +42,7 @@ class ReportLoader:
 
         for item in self.config['inputs']:
             Log.info("-" * 60)
-            Log.info("Loading data source: %s" % item['name'])
+            Log.info("Loading input: %s" % item['name'])
             Log.debug("%s" % item)
 
             if item['type'] == 'file':
@@ -53,11 +51,20 @@ class ReportLoader:
                 if item['format'] == 'csv-kv':
                     self.data[item['period']].update(dfr.get_csv_kv())
                     Log.debug("Updated dataset: %s" % item['period'])
+            else:
+                Log.info("Not loading any data")
+                pass
 
     def check_object_requirements(self, configuration_object):
+        check = True
+        mandatory = ("meta", "inputs")
 
         for key in configuration_object:
             Log.debug("Loading: %s" % key)
 
-        # ToDo Write me
-        return True
+        for key in mandatory:
+            if key not in configuration_object:
+                Log.debug("Missing mandatory key: %s" % key)
+                check = False
+
+        return check

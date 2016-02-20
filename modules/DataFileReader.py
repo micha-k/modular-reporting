@@ -1,6 +1,7 @@
 from Log import Log
 from Config import config
 
+
 class DataFileReader:
 
     def __init__(self, filename):
